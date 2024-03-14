@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it" xml:lang="it"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Arturo Palma">
+
+<title>Documento-Quarto</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="Documento-Quarto_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Documento-Quarto_files/libs/quarto-html/quarto.js"></script>
+<script src="Documento-Quarto_files/libs/quarto-html/popper.min.js"></script>
+<script src="Documento-Quarto_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Documento-Quarto_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Documento-Quarto_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Documento-Quarto_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Documento-Quarto_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Documento-Quarto_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Documento-Quarto_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">I miei contenuti</h2>
+   
+  <ul>
+  <li><a href="#il-problema-degli" id="toc-il-problema-degli" class="nav-link active" data-scroll-target="#il-problema-degli">Il problema degli </a>
+  <ul class="collapse">
+  <li><a href="#una-minaccia-per-la-salute" id="toc-una-minaccia-per-la-salute" class="nav-link" data-scroll-target="#una-minaccia-per-la-salute">Una minaccia per la salute</a></li>
+  </ul></li>
+  <li><a href="#il-dataset-insectsprays" id="toc-il-dataset-insectsprays" class="nav-link" data-scroll-target="#il-dataset-insectsprays">Il dataset InsectSprays</a>
+  <ul class="collapse">
+  <li><a href="#tabset" id="toc-tabset" class="nav-link" data-scroll-target="#tabset">Tabset</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Documento-Quarto</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i></button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autore/Autrice</div>
+    <div class="quarto-title-meta-contents">
+             <p>Arturo Palma </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Data di Pubblicazione</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">14 marzo 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="il-problema-degli" class="level1">
+<h1>Il problema degli </h1>
+<div class="cell" data-layout-align="center">
+<details>
+<summary>Codice</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="at">path =</span> <span class="st">"img/sorridenti.jpg"</span>)</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/sorridenti.jpg" class="img-fluid figure-img" style="width:40.0%"></p>
+<figcaption class="figure-caption">Sorridenti ma non innocenti</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="una-minaccia-per-la-salute" class="level2">
+<h2 class="anchored" data-anchor-id="una-minaccia-per-la-salute">Una minaccia per la salute</h2>
+<p>Benvenuti alla presentazione su come eliminare gli scarafaggi che infestano le nostre case! Nel corso di questa sessione, esploreremo un piano strategico basato sui dati raccolti nel dataset “InsectSprays” in R, con un focus particolare sui maledetti scarafaggi capitalisti che hanno avuto l’ardire di realizzare uno show televisivo, “<strong>Maledetti Scarafaggi</strong>”, che genera guadagni a danno della popolazione generale.</p>
+<p>Gli scarafaggi sono una piaga per molte case e possono causare fastidi e preoccupazioni per la salute. Attraverso l’analisi dei dati e l’elaborazione di <strong>strategie efficaci</strong>, esploreremo modi innovativi per sconfiggere questa infestazione una volta per tutte.</p>
+<div class="cell" data-layout-align="right">
+<details>
+<summary>Codice</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="at">path =</span> <span class="st">"img/sad.jpg"</span>)</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-right">
+<figure class="figure">
+<p><img src="img/sad.jpg" class="img-fluid figure-img" style="width:45.0%"></p>
+<figcaption class="figure-caption">Danni alla salute mentale</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>“<em>Non c’è giorno in cui questi maledetti scarafaggi non mi facciano impazzire! Ogni angolo della casa è invaso da loro, è come se avessero un piano ben orchestrato per tormentarmi senza sosta. È ora di porre fine a questa invasione una volta per tutte, prima che prendano il controllo completo della mia casa e della mia sanità mentale! Mi chiedo ogni giorno:</em></p>
+<ul>
+<li><em>cosa potrei fare?</em></li>
+<li><em>chi mi può aiutare?</em>”</li>
+</ul>
+</blockquote>
+</section>
+</section>
+<section id="il-dataset-insectsprays" class="level1">
+<h1>Il dataset InsectSprays</h1>
+<p>Il dataset “InsectSprays” contiene dati sperimentali che riguardano l’efficacia di vari insetticidi contro scarafaggi. Permette, quindi, di confrontare l’efficacia dei diversi trattamenti e di identificare l’insetticida più adatto per la specifica situazione. Nello specifico sono stati analizzati diversi <strong>insetticidi spray</strong>:</p>
+<div class="grid">
+<div class="g-col-4">
+<ul>
+<li><strong><em>home made</em></strong></li>
+</ul>
+<div class="cell" data-layout-align="left">
+<details>
+<summary>Codice</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="at">path =</span> <span class="st">"img/spray1.jpeg"</span>)</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="img/spray1.jpeg" class="img-fluid figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>esche commestibili</strong></li>
+</ul>
+<div class="cell" data-layout-align="left">
+<details>
+<summary>Codice</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="at">path =</span> <span class="st">"img/spray2.jpeg"</span>)</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="img/spray2.jpeg" class="img-fluid figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="g-col-4">
+<ul>
+<li><strong>stordenti</strong></li>
+</ul>
+<div class="cell" data-layout-align="left">
+<details>
+<summary>Codice</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="at">path =</span> <span class="st">"img/spray3.png"</span>)</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="img/spray3.png" class="img-fluid figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>vischiosi</strong></li>
+</ul>
+<div class="cell" data-layout-align="left">
+<details>
+<summary>Codice</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="at">path =</span> <span class="st">"img/spray4.jpg"</span>)</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="img/spray4.jpg" class="img-fluid figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="g-col-4">
+<ul>
+<li><strong>americani</strong></li>
+</ul>
+<div class="cell" data-layout-align="left">
+<details>
+<summary>Codice</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="at">path =</span> <span class="st">"img/spray5.jpg"</span>)</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="img/spray5.jpg" class="img-fluid figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>sonori</strong></li>
+</ul>
+<div class="cell" data-layout-align="left">
+<details>
+<summary>Codice</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="at">path =</span> <span class="st">"img/spray6.jpg"</span>)</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="img/spray6.jpg" class="img-fluid figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="tabset" class="level2">
+<h2 class="anchored" data-anchor-id="tabset">Tabset</h2>
+<p>Cerca <a href="#fig-math">Figura&nbsp;1</a> oppure in <a href="#tbl-esempio">Tabella&nbsp;1</a></p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Introduzione</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">I dati</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">La tabella</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell" data-layout-align="right">
+<details>
+<summary>Codice</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="at">path =</span> <span class="st">"img/math.jpg"</span>)</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-math" class="quarto-figure quarto-figure-right anchored">
+<figure class="figure">
+<p><img src="img/math.jpg" class="img-fluid figure-img" style="width:45.0%"></p>
+<figcaption class="figure-caption">Figura&nbsp;1: Danni alla salute mentale</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>Un punto Z: <span class="math display">\[z_1= \frac{x_1 - \bar{X}}{sd} = \frac{10 - 9.5}{7.2032856} = 0.0694128\]</span></p>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div>
+<details>
+<summary>Codice</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>kableExtra<span class="sc">::</span><span class="fu">kable</span>(data[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])</span></code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-esempio" class="cell tbl-cap-location-top tbl-parent quarto-layout-panel anchored">
+<div class="panel-caption table-caption">
+<p>Tabella&nbsp;1: Una tabella di esempio</p>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div id="tbl-esempio-1" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-esempio" style="flex-basis: 100.0%;justify-content: center;">
+<div id="tbl-esempio-1" data-ref-parent="tbl-esempio" class="anchored">
+<table class="table table-sm table-striped small">
+<caption>(a) per far vedere come funzionano</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;">count</th>
+<th style="text-align: left;">spray</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">A</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">20</td>
+<td style="text-align: left;">A</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">14</td>
+<td style="text-align: left;">A</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">14</td>
+<td style="text-align: left;">A</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">A</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>?(caption)</strong></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- -->
+
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiato!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiato!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Eseguire il codice</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb11" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Documento-Quarto"</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-title: I miei contenuti</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-location: right</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-depth: 3</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: </span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co">      source: true</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co">      toggle: false</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="co">      caption: none</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="an">theme:</span><span class="co"> mintie</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> Arturo Palma</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "`r Sys.Date()`"</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="an">editor:</span><span class="co"> source</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="an">lang:</span><span class="co"> it</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: true</span></span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file =</span> <span class="st">"dati/dataset_rinominato.RData"</span>)</span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>m <span class="ot">=</span> <span class="fu">lm</span>(y <span class="sc">~</span> x, <span class="at">data =</span> data)</span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>m0 <span class="ot">=</span> <span class="fu">lm</span>(y <span class="sc">~</span> <span class="dv">1</span>, <span class="at">data =</span> data)</span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a><span class="fu"># Il problema degli \color[HTML]{008000}{insetti}\normalcolor</span></span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.cap = "Sorridenti ma non innocenti", fig.align="center", out.width="40%"}</span></span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="at">path =</span> <span class="st">"img/sorridenti.jpg"</span>)</span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a><span class="fu">## Una minaccia per la salute</span></span>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a>Benvenuti alla presentazione su come eliminare gli scarafaggi che infestano le nostre case! Nel corso di questa sessione, esploreremo un piano strategico basato sui dati raccolti nel dataset "InsectSprays" in R, con un focus particolare sui maledetti scarafaggi capitalisti che hanno avuto l'ardire di realizzare uno show televisivo, "**Maledetti Scarafaggi**", che genera guadagni a danno della popolazione generale.</span>
+<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a>Gli scarafaggi sono una piaga per molte case e possono causare fastidi e preoccupazioni per la salute. Attraverso l'analisi dei dati e l'elaborazione di **strategie efficaci**, esploreremo modi innovativi per sconfiggere questa infestazione una volta per tutte.</span>
+<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-48"><a href="#cb11-48" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-49"><a href="#cb11-49" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.cap: "Danni alla salute mentale"</span></span>
+<span id="cb11-50"><a href="#cb11-50" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.align: "right"</span></span>
+<span id="cb11-51"><a href="#cb11-51" aria-hidden="true" tabindex="-1"></a><span class="co">#| out.width: "45%"</span></span>
+<span id="cb11-52"><a href="#cb11-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-53"><a href="#cb11-53" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="at">path =</span> <span class="st">"img/sad.jpg"</span>)</span>
+<span id="cb11-54"><a href="#cb11-54" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-55"><a href="#cb11-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-56"><a href="#cb11-56" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; "*Non c'è giorno in cui questi maledetti scarafaggi non mi facciano impazzire! Ogni angolo della casa è invaso da loro, è come se avessero un piano ben orchestrato per tormentarmi senza sosta. È ora di porre fine a questa invasione una volta per tutte, prima che prendano il controllo completo della mia casa e della mia sanità mentale! Mi chiedo ogni giorno:*</span></span>
+<span id="cb11-57"><a href="#cb11-57" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb11-58"><a href="#cb11-58" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>*cosa potrei fare?*</span>
+<span id="cb11-59"><a href="#cb11-59" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>*chi mi può aiutare?*"</span>
+<span id="cb11-60"><a href="#cb11-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-61"><a href="#cb11-61" aria-hidden="true" tabindex="-1"></a><span class="fu"># Il dataset InsectSprays</span></span>
+<span id="cb11-62"><a href="#cb11-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-63"><a href="#cb11-63" aria-hidden="true" tabindex="-1"></a>Il dataset "InsectSprays" contiene dati sperimentali che riguardano l'efficacia di vari insetticidi contro scarafaggi. Permette, quindi, di confrontare l'efficacia dei diversi trattamenti e di identificare l'insetticida più adatto per la specifica situazione. </span>
+<span id="cb11-64"><a href="#cb11-64" aria-hidden="true" tabindex="-1"></a>Nello specifico sono stati analizzati diversi **insetticidi spray**:</span>
+<span id="cb11-65"><a href="#cb11-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-66"><a href="#cb11-66" aria-hidden="true" tabindex="-1"></a>::: {.grid}</span>
+<span id="cb11-67"><a href="#cb11-67" aria-hidden="true" tabindex="-1"></a>::: {.g-col-4}</span>
+<span id="cb11-68"><a href="#cb11-68" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>***home made***</span>
+<span id="cb11-69"><a href="#cb11-69" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.align="left", out.width="80%"}</span></span>
+<span id="cb11-70"><a href="#cb11-70" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="at">path =</span> <span class="st">"img/spray1.jpeg"</span>)</span>
+<span id="cb11-71"><a href="#cb11-71" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-72"><a href="#cb11-72" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>**esche commestibili**</span>
+<span id="cb11-73"><a href="#cb11-73" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.align="left", out.width="80%"}</span></span>
+<span id="cb11-74"><a href="#cb11-74" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="at">path =</span> <span class="st">"img/spray2.jpeg"</span>)</span>
+<span id="cb11-75"><a href="#cb11-75" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-76"><a href="#cb11-76" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb11-77"><a href="#cb11-77" aria-hidden="true" tabindex="-1"></a>::: {.g-col-4}</span>
+<span id="cb11-78"><a href="#cb11-78" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>**stordenti**</span>
+<span id="cb11-79"><a href="#cb11-79" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.align="left", out.width="60%"}</span></span>
+<span id="cb11-80"><a href="#cb11-80" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="at">path =</span> <span class="st">"img/spray3.png"</span>)</span>
+<span id="cb11-81"><a href="#cb11-81" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-82"><a href="#cb11-82" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>**vischiosi**</span>
+<span id="cb11-83"><a href="#cb11-83" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.align="left", out.width="60%"}</span></span>
+<span id="cb11-84"><a href="#cb11-84" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="at">path =</span> <span class="st">"img/spray4.jpg"</span>)</span>
+<span id="cb11-85"><a href="#cb11-85" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-86"><a href="#cb11-86" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb11-87"><a href="#cb11-87" aria-hidden="true" tabindex="-1"></a>::: {.g-col-4}</span>
+<span id="cb11-88"><a href="#cb11-88" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>**americani**</span>
+<span id="cb11-89"><a href="#cb11-89" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.align="left", out.width="80%"}</span></span>
+<span id="cb11-90"><a href="#cb11-90" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="at">path =</span> <span class="st">"img/spray5.jpg"</span>)</span>
+<span id="cb11-91"><a href="#cb11-91" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-92"><a href="#cb11-92" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>**sonori**</span>
+<span id="cb11-93"><a href="#cb11-93" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.align="left", out.width="80%"}</span></span>
+<span id="cb11-94"><a href="#cb11-94" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="at">path =</span> <span class="st">"img/spray6.jpg"</span>)</span>
+<span id="cb11-95"><a href="#cb11-95" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-96"><a href="#cb11-96" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb11-97"><a href="#cb11-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-98"><a href="#cb11-98" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb11-99"><a href="#cb11-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-100"><a href="#cb11-100" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tabset</span></span>
+<span id="cb11-101"><a href="#cb11-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-102"><a href="#cb11-102" aria-hidden="true" tabindex="-1"></a>Cerca @fig-math oppure in @tbl-esempio</span>
+<span id="cb11-103"><a href="#cb11-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-104"><a href="#cb11-104" aria-hidden="true" tabindex="-1"></a>::: {.panel-tabset}</span>
+<span id="cb11-105"><a href="#cb11-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-106"><a href="#cb11-106" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduzione</span></span>
+<span id="cb11-107"><a href="#cb11-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-110"><a href="#cb11-110" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-111"><a href="#cb11-111" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.cap: "Danni alla salute mentale"</span></span>
+<span id="cb11-112"><a href="#cb11-112" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.align: "right"</span></span>
+<span id="cb11-113"><a href="#cb11-113" aria-hidden="true" tabindex="-1"></a><span class="co">#| out.width: "45%"</span></span>
+<span id="cb11-114"><a href="#cb11-114" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-math</span></span>
+<span id="cb11-115"><a href="#cb11-115" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="at">path =</span> <span class="st">"img/math.jpg"</span>)</span>
+<span id="cb11-116"><a href="#cb11-116" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-117"><a href="#cb11-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-118"><a href="#cb11-118" aria-hidden="true" tabindex="-1"></a><span class="fu">## I dati</span></span>
+<span id="cb11-119"><a href="#cb11-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-120"><a href="#cb11-120" aria-hidden="true" tabindex="-1"></a>Un punto Z: $$z_1= \frac{x_1 - \bar{X}}{sd} = \frac{<span class="in">`r data$y[1]`</span> - <span class="in">`r mean(data$y)`</span>}{<span class="in">`r sd(data$y)`</span>} = <span class="in">`r (data$y[1] - mean(data$y))/sd(data$y)`</span>$$</span>
+<span id="cb11-121"><a href="#cb11-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-122"><a href="#cb11-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-123"><a href="#cb11-123" aria-hidden="true" tabindex="-1"></a><span class="fu">## La tabella</span></span>
+<span id="cb11-124"><a href="#cb11-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-127"><a href="#cb11-127" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-128"><a href="#cb11-128" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap-location: top</span></span>
+<span id="cb11-129"><a href="#cb11-129" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: Una tabella di esempio</span></span>
+<span id="cb11-130"><a href="#cb11-130" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-subcap: per far vedere come funzionano</span></span>
+<span id="cb11-131"><a href="#cb11-131" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-esempio</span></span>
+<span id="cb11-132"><a href="#cb11-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-133"><a href="#cb11-133" aria-hidden="true" tabindex="-1"></a>kableExtra<span class="sc">::</span><span class="fu">kable</span>(data[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>])</span>
+<span id="cb11-134"><a href="#cb11-134" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-135"><a href="#cb11-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-136"><a href="#cb11-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-137"><a href="#cb11-137" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb11-138"><a href="#cb11-138" aria-hidden="true" tabindex="-1"></a></span>
+</code><button title="Copia negli appunti" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+</body></html>

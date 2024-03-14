@@ -1,0 +1,37 @@
+---
+title: "Grafici-situazionali"
+author: "Arturo Palma"
+date: '`r Sys.Date()`'
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+load(file = "dati/dataset_rinominato.RData")
+m = lm(y ~ x, data = data)
+m0 = lm(y ~ 1, data = data)
+library(ggplot2)
+```
+
+# Prova
+
+`r knitr::asis_output(ifelse(knitr::is_html_output(), "<span style='color:red'>**Questo file è in HTML**</span>", "\\color{red} **Questo file è in PDF** \\normalcolor"))`
+
+
+```{r, echo=FALSE, eval=knitr::is_html_output()}
+grafico = ggplot(data, 
+       aes(y=y,x=x, color =x), alpha = 0.4) + geom_jitter(width = 0.15) + 
+  theme_bw() + theme(legend.position = "none") 
+plotly::ggplotly(grafico)
+```
+
+```{r, echo=FALSE, eval=knitr::is_latex_output()}
+grafico = ggplot(data, 
+       aes(y=y,x=x, color =x), alpha = 0.4) + geom_jitter(width = 0.15) + 
+  theme_bw() + theme(legend.position = "none") 
+grafico
+```
+
+

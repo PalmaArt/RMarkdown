@@ -1,0 +1,234 @@
+---
+title: "Insetti in trappola!"
+author: "Arturo Palma"
+date: "`r Sys.Date()`"
+output:        #quando si clicca knit viene utilizzato il formato di prima riga (se ce ne sono diversi)
+  pdf_document:     
+    number_sections: true
+subtitle: "L'analisi di InsectSprays per un piano di attacco mirato"
+toc: true #questo comando serve per creare l'indice (TableOfContents)
+toc_depth: 2
+geometry: margin=1in #per specificare i margini
+linestretch: 1.5 #interlinea
+lang: it #controlla il linguaggio di elementi come "contents", "table", "figure", ecc.
+bibliography: biblio.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+load(file = "dati/dataset_rinominato.RData")
+m = lm(y ~ x, data = data)
+m0 = lm(y ~ 1, data = data)
+
+hook_output <- knitr::knit_hooks$get("output")
+knitr::knit_hooks$set(output = function(x, options) {
+     if (!is.null(n <- options$out.lines)) {
+         x <- xfun::split_lines(x)
+         if (length(x) > n) {
+             # truncate the output
+           x <- c(head(x, n), "....\n")
+         }
+         x <- paste(x, collapse = "\n")
+     }
+     hook_output(x, options)
+ })
+
+
+```
+
+\newpage
+
+# Il problema degli \color[HTML]{008000}{insetti}\normalcolor
+
+```{r, fig.cap = "Sorridenti ma non innocenti", fig.align="center", out.width="40%"}
+knitr::include_graphics(path = "img/sorridenti.jpg")
+```
+
+## Una minaccia per la salute
+
+Benvenuti alla presentazione su come eliminare gli scarafaggi che infestano le nostre case! Nel corso di questa sessione, esploreremo un piano strategico basato sui dati raccolti nel dataset "InsectSprays" in R, con un focus particolare sui maledetti scarafaggi capitalisti che hanno avuto l'ardire di realizzare uno show televisivo, "**Maledetti Scarafaggi**", che genera guadagni a danno della popolazione generale.
+
+Gli scarafaggi sono una piaga per molte case e possono causare fastidi e preoccupazioni per la salute. Attraverso l'analisi dei dati e l'elaborazione di **strategie efficaci**, esploreremo modi innovativi per sconfiggere questa infestazione una volta per tutte.
+
+```{r, fig.cap = "Ska Ska", fig.align="right", out.width="45%"}
+knitr::include_graphics(path = "img/sad.jpg")
+```
+
+> "*Non c'è giorno in cui questi maledetti scarafaggi non mi facciano impazzire! Ogni angolo della casa è invaso da loro, è come se avessero un piano ben orchestrato per tormentarmi senza sosta. È ora di porre fine a questa invasione una volta per tutte, prima che prendano il controllo completo della mia casa e della mia sanità mentale! Mi chiedo ogni giorno:*
+>
+ - *cosa potrei fare?*
+ - *chi mi può aiutare?*"
+
+# Il dataset InsectSprays
+
+Il dataset "InsectSprays" contiene dati sperimentali che riguardano l'efficacia di vari insetticidi contro scarafaggi. Permette, quindi, di confrontare l'efficacia dei diversi trattamenti e di identificare l'insetticida più adatto per la specifica situazione. 
+Nello specifico sono stati analizzati diversi **insetticidi spray**:
+
+ - ***home made***
+```{r, fig.align="left", out.width="30%"}
+knitr::include_graphics(path = "img/spray1.jpeg")
+```
+ - **esche commestibili**
+```{r, fig.align="left", out.width="30%"}
+knitr::include_graphics(path = "img/spray2.jpeg")
+```
+ - **stordenti**
+```{r, fig.align="left", out.width="30%"}
+knitr::include_graphics(path = "img/spray3.png")
+```
+ - **vischiosi**
+```{r, fig.align="left", out.width="30%"}
+knitr::include_graphics(path = "img/spray4.jpg")
+```
+ - **americani**
+```{r, fig.align="left", out.width="30%"}
+knitr::include_graphics(path = "img/spray5.jpg")
+```
+ - **sonori**
+```{r, fig.align="left", out.width="30%"}
+knitr::include_graphics(path = "img/spray6.jpg")
+```
+    
+## Analisi descrittive
+    
+Come è possibile osservare in Tabella \ref{tab:sum}
+
+```{r, results='asis', message=FALSE}
+library(stargazer)
+stargazer(InsectSprays, type="latex", summary = TRUE, 
+           title= "Tabella di summary", digits = 3, header=FALSE, label = "tab:sum")
+
+```
+
+```{r, results='asis'}
+
+stargazer(m, type = "latex", summary = TRUE, title = "Risultati del modello", digits = 2, header = FALSE)
+
+```
+
+```{r, results='asis'}
+
+stargazer(m0, m, type = "latex", title = "Model comparison", digits = 2, intercept.top = TRUE, intercept.bottom = FALSE, header = FALSE)
+
+```
+
+
+Un punto Z: $$z_1= \frac{x_1 - \bar{X}}{sd} = \frac{`r data$y[1]` - `r mean(data$y)`}{`r sd(data$y)`} = `r (data$y[1] - mean(data$y))/sd(data$y)`$$
+
+
+
+
+
+```{r, comment= " "}
+
+plot(data$y ~ data$x)
+
+```
+
+\newpage
+
+```{r, comment= " ", echo=TRUE}
+
+plot(data$y ~ data$x)
+
+```
+
+Ma osserviamo il dataset
+
+```{r, comment= " ", echo=FALSE, out.lines = 10}
+
+data
+
+```
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+2. **Identificazione dei fattori che influenzano la popolazione di insetti**: Il dataset include informazioni su fattori come il tipo di coltura, le condizioni climatiche e la stagione. 
+L'analisi di questi dati permette di capire quali fattori favoriscono la proliferazione degli insetti e di sviluppare strategie di prevenzione più efficaci.
+3. **Progettazione di piani di disinfestazione mirati**: I dati del dataset possono essere utilizzati per ottimizzare il dosaggio e la tempistica dei trattamenti insetticidi.
+Permette di creare piani di disinfestazione mirati che riducono al minimo l'impatto ambientale e preservano la biodiversità.
+4. **Sviluppo di metodi di disinfestazione alternativi**: L'analisi del dataset può aiutare a identificare metodi di disinfestazione alternativi agli insetticidi chimici.
+Questo può includere la lotta biologica, il controllo integrato e altre strategie sostenibili.
+5. **Promozione di una gestione responsabile degli insetti**: Il dataset "InsectSprays" può essere utilizzato per educare il pubblico sull'importanza di una gestione responsabile degli insetti. Questo può contribuire a ridurre l'uso di insetticidi chimici e a promuovere la tutela dell'ambiente. In sintesi, il dataset "InsectSprays" rappresenta un prezioso strumento per la lotta contro gli insetti. Fornisce dati utili per la progettazione di piani di disinfestazione efficaci, sostenibili e rispettosi dell'ambiente.
+
+## Esempio di utilizzo:
+
+
+@laudadio_manuale_2015 che sta subendo danni alle sue colture da parte di insetti può utilizzare il dataset "InsectSprays" per:
+
+- Identificare l'insetticida più efficace per il controllo del tipo di insetto in questione.
+- Capire quali fattori favoriscono la proliferazione degli insetti nella sua zona.
+- Sviluppare un piano di disinfestazione mirato che riduca al minimo l'impatto ambientale.
+- Valutare l'utilizzo di metodi di disinfestazione alternativi agli insetticidi chimici.
+
+Il dataset "InsectSprays" è un esempio di come l'analisi dei dati può essere utilizzata per affrontare sfide reali e migliorare la nostra vita.
+
+# Conclusioni
+
+
+
+```{r, fig.cap = "Caption", fig.align="left", out.width="30%"}
+knitr::include_graphics(path = "img/insettivoro-2.jpg")
+```
+
+
+L'analisi del dataset "InsectSprays" ha dimostrato che l'utilizzo di dati e analisi statistiche può supportare la progettazione di piani di disinfestazione efficaci e sostenibili.
+
+## Efficacia degli insetticidi:
+
+Il dataset fornisce dati sull'efficacia di diversi insetticidi nel controllo di specifici insetti, permettendo di identificare il trattamento più adatto per la specifica situazione.
+
+## Fattori che influenzano la popolazione di insetti:
+
+Il dataset include informazioni su fattori come il tipo di coltura, le condizioni climatiche e la stagione. L'analisi di questi dati permette di capire quali fattori favoriscono la proliferazione degli insetti e di sviluppare strategie di prevenzione più efficaci [@croom_music_2015, ciao].
+
+## Piani di disinfestazione mirati:
+
+I dati del dataset possono essere utilizzati per ottimizzare il dosaggio e la tempistica dei trattamenti insetticidi, creando piani di disinfestazione mirati che riducono al minimo l'impatto ambientale e preservano la biodiversità.
+
+## Metodi di disinfestazione alternativi:
+
+L'analisi del dataset può aiutare a identificare metodi di disinfestazione alternativi agli insetticidi chimici, come la lotta biologica e il controllo integrato.
+
+## Gestione responsabile degli insetti:
+
+Il dataset "InsectSprays" può essere utilizzato per educare il pubblico sull'importanza di una gestione responsabile degli insetti, contribuendo a ridurre l'uso di insetticidi chimici e a promuovere la tutela dell'ambiente.
+
+In futuro, l'utilizzo di dataset come "InsectSprays" e l'avanzamento delle tecnologie di analisi dei dati saranno cruciali per:
+
+Sviluppare nuovi strumenti per la lotta contro gli insetti.
+Promuovere una gestione più efficiente e sostenibile delle risorse agricole.
+Proteggere la salute umana e l'ambiente.
+L'analisi del dataset "InsectSprays" rappresenta un passo avanti importante nella lotta contro gli insetti e ci avvicina a un futuro più sicuro e sostenibile.
+
+È importante sottolineare che:
+
+L'utilizzo di insetticidi chimici deve essere sempre l'ultima spiaggia.
+Si dovrebbero privilegiare metodi di disinfestazione alternativi.
+È fondamentale educare il pubblico sull'importanza di una gestione responsabile degli insetti.
+Solo attraverso un impegno comune possiamo vincere la sfida degli insetti e proteggere il nostro pianeta.
+
+
+ **\LARGE\color{red}{DISTRUGGIAMOLI}**\normalcolor\normalsize
+ 
+ **\LARGE\color{red}{TUTTI}**\normalcolor\normalsize
+ 
+ **\LARGE\color{red}{SUBITO}**\normalcolor\normalsize [@csikszentmihalyi_beyond_1975]   
+
+![Maledetti Skarafaggi]("img/ska.jpg")
+
+
+
+\newpage
+# Bibliografia

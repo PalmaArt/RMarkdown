@@ -1,0 +1,5 @@
+"0","m0 = lm(y ~ 1, data = data)
+"
+"2","Error in model.frame.default(formula = y ~ 1, data = data, drop.unused.levels = TRUE) : 
+  'data' dev'essere un data.frame, un ambiente o una lista
+"

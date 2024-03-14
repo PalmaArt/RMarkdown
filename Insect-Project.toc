@@ -1,0 +1,13 @@
+\babel@toc {italian}{}\relax 
+\contentsline {section}{\numberline {1}Il problema degli \color [HTML]{008000}{insetti}\normalcolor }{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Una minaccia per la salute}{2}{subsection.1.1}%
+\contentsline {section}{\numberline {2}Il dataset InsectSprays}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Analisi descrittive}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Esempio di utilizzo:}{9}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Conclusioni}{9}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Efficacia degli insetticidi:}{10}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Fattori che influenzano la popolazione di insetti:}{10}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Piani di disinfestazione mirati:}{10}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Metodi di disinfestazione alternativi:}{10}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Gestione responsabile degli insetti:}{10}{subsection.3.5}%
+\contentsline {section}{Bibliografia}{12}{section*.2}%
