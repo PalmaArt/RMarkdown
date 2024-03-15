@@ -1,0 +1,72 @@
+---
+title: "04-LaTeX-`knitr`"
+author: |
+  | Arturo Palma
+  | University of Padova
+date: 'Corso `RMarkdown`'
+institute: "arturo.palma@studenti.unipd.it"
+output:
+  beamer_presentation:
+    theme: CambridgeUS
+    colortheme: beaver
+    fonttheme: serif
+    highlight: haddock
+header-includes:
+- \AtBeginDocument{\title[\LaTeX bis]{04-\LaTeX-`knitr`}}
+- \usepackage{graphicx}
+- \usepackage{setspace}
+- \usepackage{tabularx}
+- \usepackage[italian]{babel}
+- \usepackage{tikzsymbols}
+- \usepackage{subcaption}
+- \usepackage{tikz}
+- \usepackage{multicol} 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## R Markdown
+
+\begin{columns}
+\begin{column}{0.50\textwidth}
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see
+
+When you click the Knit button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+\end{column}
+\begin{column}{0.50\textwidth}
+jdfnjasfk
+\end{column}
+\end{columns}
+
+## slide nuova
+
+::: columns
+
+:::: column
+
+```{r}
+plot(cars)
+```
+::::
+
+:::: column
+![Logo](img/logo.png)
+::::
+:::
+
+
+
+
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
