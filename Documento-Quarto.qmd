@@ -29,7 +29,7 @@ m0 = lm(y ~ 1, data = data)
 ```
 
 
-# Il problema degli \color[HTML]{008000}{insetti}\normalcolor
+# Il problema degli insetti
 
 ```{r, fig.cap = "Sorridenti ma non innocenti", fig.align="center", out.width="40%"}
 knitr::include_graphics(path = "img/sorridenti.jpg")

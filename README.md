@@ -1,7 +1,6 @@
----
-title: "Corso su `RMarkdown`"
-author: "Arturo Palma"
----
+# Corso su `RMarkdown`
+
+*Arturo Palma*
 
 ![](img/logorm.png)
 
